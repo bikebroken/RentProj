@@ -29,8 +29,9 @@ while True:
 		break
 
 	for house in house_list:
-		#得到标签包裹着的文本
+		#得到标签包裹着的文本，.string获取标签里的内容
 		house_title = house.select("h2")[0].string.encode("utf8")
+		print house_title
 		#得到标签内属性的值
 		house_url = urljoin(url, house.select("a")[0]["href"])
 		house_info_list = house_title.split()
